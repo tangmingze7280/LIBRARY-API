@@ -1,0 +1,24 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+
+#公共配置与profiles选择无关
+mybatis:
+  #参数文件位置
+  typeAliasesPackage: com.sbmybatis.wbapps.entity
+  #映射文件位置
+  mapperLocations: classpath:mapper/*.xml
+
+
+---
+
+#开发配置
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/mytest
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
