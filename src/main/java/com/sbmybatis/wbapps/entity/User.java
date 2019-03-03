@@ -1,9 +1,15 @@
 package com.sbmybatis.wbapps.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User{
     private Integer id;
     private String  uname;
-
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

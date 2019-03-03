@@ -10,15 +10,42 @@ mybatis:
   #映射文件位置
   mapperLocations: classpath:mapper/*.xml
 
-
+server:
+  port: 8888
 ---
 
 #开发配置
 spring:
   profiles: dev
-
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
   datasource:
-    url: jdbc:mysql://localhost:3306/mytest
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/ssm?useUnicode=true&characterEncoding=utf8
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver
+    filters: stat,wall,log4j     #druid监控配置
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    dbcp2:
+      min-idle: 5         #数据库连接池的最小维持连接数
+      initial-size: 5     #初始化提供的连接数
+      max-total: 5          #最大的连接数
+      max-wait-millis: 200        #等待连接获取的最大超时时间
+  thymeleaf:
+    prefix: classpath:/views/
+    mode: HTML5
+    encoding: UTF-8
+    suffix: .html
+
+####分科线——————————————
+person:
+  lastName: 唐鸣泽
+  age: 22
+  wtf: [a,b,c]
+  lit: [sc,sa,c]
+  mas: {a:abc,b:abc}
