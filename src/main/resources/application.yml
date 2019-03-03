@@ -44,12 +44,22 @@ spring:
 
 ####分科线——————————————
 person:
-  lastName: 唐鸣泽
-  age: 22
+  lastName: ${random.value}
+  age: ${random.int}
   wtf: [a,b,c]
   lit:
     - xaa
-    - tmz
+    - ${random.uuid}
   mas: {a: abc,b: abc}
   time: 2019/01/01
   flag: false
+
+
+#分割线------------------------------
+logging:
+  level: trace
+  #path不设置 只会在控制台输出 可以使用绝对路径； 想要指定特定路径 需要用 file
+  path: spring.log
+  #pattern:
+  #  file: #指定文件中日志输出格式
+  #  console: #控制台输出格式
