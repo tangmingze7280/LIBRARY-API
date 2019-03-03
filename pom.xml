@@ -60,10 +60,15 @@
             <version>1.1.0</version>
         </dependency>
         <!--thymeleaf views 为跳转路径-->
-        <dependency>           
-            <groupId>org.springframework.boot</groupId>         
-            <artifactId>spring-boot-starter-thymeleaf</artifactId> 
-            <version>3.0.2.RELEASE</version> 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <!--配置文件变量注入到成员变量中-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

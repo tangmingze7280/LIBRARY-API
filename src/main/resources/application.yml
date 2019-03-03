@@ -47,5 +47,9 @@ person:
   lastName: 唐鸣泽
   age: 22
   wtf: [a,b,c]
-  lit: [sc,sa,c]
-  mas: {a:abc,b:abc}
+  lit:
+    - xaa
+    - tmz
+  mas: {a: abc,b: abc}
+  time: 2019/01/01
+  flag: false
