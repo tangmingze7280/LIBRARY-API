@@ -1,0 +1,43 @@
+2019-03-03 16:41:54.204  INFO 4556 --- [main] c.s.wbapps.WbappsApplicationTests        : Starting WbappsApplicationTests on DESKTOP-04H5TV3 with PID 4556 (started by hd in C:\Users\hd\IdeaProjects\nice)
+2019-03-03 16:41:54.206  INFO 4556 --- [main] c.s.wbapps.WbappsApplicationTests        : The following profiles are active: dev
+2019-03-03 16:41:54.887  INFO 4556 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1a245833: startup date [Sun Mar 03 16:41:54 CST 2019]; root of context hierarchy
+2019-03-03 16:42:00.335  INFO 4556 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-03-03 16:42:01.532  INFO 4556 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2019-03-03 16:42:01.591  INFO 4556 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-03 16:42:01.824  INFO 4556 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2019-03-03 16:42:01.830  INFO 4556 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-03 16:42:01.836  INFO 4556 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2019-03-03 16:42:02.142  INFO 4556 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2019-03-03 16:42:02.472  INFO 4556 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-03-03 16:42:04.163  INFO 4556 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2019-03-03 16:42:04.557  INFO 4556 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-03 16:42:07.536  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1a245833: startup date [Sun Mar 03 16:41:54 CST 2019]; root of context hierarchy
+2019-03-03 16:42:07.803  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/index/hi]}" onto public java.lang.String com.sbmybatis.wbapps.controller.ArravieController.hi()
+2019-03-03 16:42:07.807  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testboot/getjdc]}" onto public com.sbmybatis.wbapps.entity.User com.sbmybatis.wbapps.controller.TestBootController.getJdc()
+2019-03-03 16:42:07.810  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/testboot/getuser]}" onto public com.sbmybatis.wbapps.entity.User com.sbmybatis.wbapps.controller.TestBootController.getUser()
+2019-03-03 16:42:07.825  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/getUserInfo],methods=[GET]}" onto public com.sbmybatis.wbapps.entity.UserInfo com.sbmybatis.wbapps.controller.TestController.getUserInfoByName(java.lang.Long)
+2019-03-03 16:42:07.828  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/updateUserInfo],methods=[POST]}" onto public com.sbmybatis.wbapps.entity.UserInfo com.sbmybatis.wbapps.controller.TestController.updateUserInfo(com.sbmybatis.wbapps.entity.UserInfo)
+2019-03-03 16:42:07.830  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/getCurrentUserList],methods=[GET]}" onto public java.util.List<com.sbmybatis.wbapps.entity.UserInfo> com.sbmybatis.wbapps.controller.TestController.getCurrentUserList()
+2019-03-03 16:42:07.834  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/getUserList],methods=[GET]}" onto public java.util.List<com.sbmybatis.wbapps.entity.UserInfo> com.sbmybatis.wbapps.controller.TestController.getUserList()
+2019-03-03 16:42:07.835  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/deleteUserInfo],methods=[POST]}" onto public void com.sbmybatis.wbapps.controller.TestController.deleteUserInfo(java.lang.Long)
+2019-03-03 16:42:07.836  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/addUserInfo],methods=[GET]}" onto public com.sbmybatis.wbapps.entity.UserInfo com.sbmybatis.wbapps.controller.TestController.addUserInfo()
+2019-03-03 16:42:07.837  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/test/getPageUserList],methods=[GET]}" onto public org.springframework.data.domain.Page<com.sbmybatis.wbapps.entity.UserInfo> com.sbmybatis.wbapps.controller.TestController.getPageUserList()
+2019-03-03 16:42:07.844  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-03 16:42:07.845  INFO 4556 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-03 16:42:07.932  INFO 4556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-03 16:42:07.932  INFO 4556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-03 16:42:08.055  INFO 4556 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-03 16:42:08.221  WARN 4556 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2019-03-03 16:42:10.229  INFO 4556 --- [main] c.s.wbapps.WbappsApplicationTests        : Started WbappsApplicationTests in 18.161 seconds (JVM running for 20.888)
+2019-03-03 16:42:10.423  INFO 4556 --- [main] c.s.wbapps.WbappsApplicationTests        : 自定义信息日志
+2019-03-03 16:42:10.428  WARN 4556 --- [main] c.s.wbapps.WbappsApplicationTests        : 警告日志
+2019-03-03 16:42:10.429 ERROR 4556 --- [main] c.s.wbapps.WbappsApplicationTests        : 错误日志
+2019-03-03 16:42:10.450  INFO 4556 --- [Thread-3] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1a245833: startup date [Sun Mar 03 16:41:54 CST 2019]; root of context hierarchy
+2019-03-03 16:42:10.457  INFO 4556 --- [Thread-3] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-03 16:42:10.475  INFO 4556 --- [Thread-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2019-03-03 16:51:32.824  INFO 12840 --- [main] c.s.wbapps.WbappsApplicationTests        : Starting WbappsApplicationTests on DESKTOP-04H5TV3 with PID 12840 (started by hd in C:\Users\hd\IdeaProjects\nice)
+2019-03-03 16:51:32.829  INFO 12840 --- [main] c.s.wbapps.WbappsApplicationTests        : The following profiles are active: dev
+2019-03-03 16:51:33.515  INFO 12840 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2a8448fa: startup date [Sun Mar 03 16:51:33 CST 2019]; root of context hierarchy
+2019-03-03 16:51:39.881  INFO 12840 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
