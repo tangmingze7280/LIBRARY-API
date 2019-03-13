@@ -1,7 +1,7 @@
 #默认使用配置
-spring:
-  profiles:
-    active: dev
+#spring:
+#  profiles:
+#    active: dev
 
 #公共配置与profiles选择无关
 mybatis:
@@ -11,18 +11,16 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
 
 server:
-  port: 8888
----
+  port: 8999
 
 #开发配置
 spring:
-  profiles: dev
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: UTC
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/ssm?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/testss?useUnicode=true&characterEncoding=utf8
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver
@@ -41,8 +39,11 @@ spring:
     mode: HTML5
     encoding: UTF-8
     suffix: .html
+  mvc:
+    favicon:
+      enabled: true
 
-####分科线——————————————
+####分割线——————————————
 person:
   lastName: ${random.value}
   age: ${random.int}
@@ -59,7 +60,21 @@ person:
 logging:
   level: trace
   #path不设置 只会在控制台输出 可以使用绝对路径； 想要指定特定路径 需要用 file
-  path: spring.log
+  path: /spring/log
   #pattern:
   #  file: #指定文件中日志输出格式
   #  console: #控制台输出格式
+
+#分割线------------------------------
+text:
+  tname: 唐鸣泽${text.age}
+  age: 21
+  a:
+    - 1
+    - 2
+    - 3
+    - ${random.int}
+  map:
+     a: abc
+     b: b
+  lit: [1,2,3,4,5]

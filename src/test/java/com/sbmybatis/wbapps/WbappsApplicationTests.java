@@ -26,7 +26,7 @@ public class WbappsApplicationTests {
         logger.info("自定义信息日志");
         logger.warn("警告日志");
         logger.error("错误日志");
-
+        logger.info(person.toString());
     }
 
 }
