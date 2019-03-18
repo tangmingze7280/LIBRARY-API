@@ -12,6 +12,7 @@ mybatis:
 
 server:
   port: 8999
+  context-path: /library
 
 #开发配置
 spring:
@@ -20,7 +21,7 @@ spring:
     time-zone: UTC
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/testss?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/baselibrary?useUnicode=true&characterEncoding=utf8
     username: root
     password:
     driver-class-name: com.mysql.jdbc.Driver

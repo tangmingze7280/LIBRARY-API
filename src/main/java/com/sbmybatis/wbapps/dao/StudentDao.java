@@ -2,6 +2,8 @@ package com.sbmybatis.wbapps.dao;
 
 import com.sbmybatis.wbapps.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -15,4 +17,10 @@ import java.util.List;
 public interface StudentDao extends JpaRepository<Student,Long> {
     //根据学生姓名查询数据
     public List<Student> findByName(String name);
+
+    @Query(value="select * from tb_student",nativeQuery = true)
+    public List<Student> findOther(String name);
+ /*   @Query(value="",nativeQuery = true)
+    @Modifying
+    public void updataAll();*/
 }

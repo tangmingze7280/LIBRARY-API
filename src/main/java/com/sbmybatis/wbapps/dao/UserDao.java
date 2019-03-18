@@ -10,5 +10,4 @@ public interface UserDao {
      * @return
      */
     User selectByPrimaryKey(Integer id);
-
 }
