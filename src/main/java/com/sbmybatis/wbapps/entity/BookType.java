@@ -12,8 +12,8 @@ import javax.persistence.Id;
 public class BookType {
 
     private Long id;
-    private String bkType;
-    private String tpyCode;
+    private String bkType;//图书类型
+    private String tpyCode;//类型编号
     @Id
     @GeneratedValue
     public Long getId() {
