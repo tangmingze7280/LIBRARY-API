@@ -1,9 +1,6 @@
 package com.sbmybatis.wbapps.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @Entity wx新同步用户名
@@ -18,12 +15,21 @@ import javax.persistence.Id;
  */
 @Entity
 public class WxUser {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)//自增主键
+    @Column
     private Long id;
-    private String wxCode;//微信号
+
+    private String wxCode;//微信号 openId
     private String bookListNum;//书单号
-    private String userName;//用户微信名
+    private String nickName;//用户微信名
     private String bkUsered;//接触的书籍以{xx,xx}的形式存入
+    private String avatarUrl;//头像
+    private String city;//市
+    private String country;//国籍
+    private String gender;//性别 0 1 2 未知、男性、女性
+    private String language;//语言
+    private String province;//省
     @Column
     public String getWxCode() {
         return wxCode;
@@ -40,30 +46,77 @@ public class WxUser {
     public void setBookListNum(String bookListNum) {
         this.bookListNum = bookListNum;
     }
-    @Column
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
-    @Id
-    @GeneratedValue
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
     }
-
+    @Column
     public String getBkUsered() {
         return bkUsered;
     }
 
     public void setBkUsered(String bkUsered) {
         this.bkUsered = bkUsered;
+    }
+    @Column
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+    @Column
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+    @Column
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+    @Column
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+    @Column
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    @Column
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+    @Column
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     @Override
@@ -72,8 +125,14 @@ public class WxUser {
                 "id=" + id +
                 ", wxCode='" + wxCode + '\'' +
                 ", bookListNum='" + bookListNum + '\'' +
-                ", userName='" + userName + '\'' +
+                ", nickName='" + nickName + '\'' +
                 ", bkUsered='" + bkUsered + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", gender=" + gender +
+                ", language='" + language + '\'' +
+                ", province='" + province + '\'' +
                 '}';
     }
 }

@@ -1,7 +1,6 @@
 package com.sbmybatis.wbapps.service.impl;
 
 import com.sbmybatis.wbapps.comment.CommonResult;
-import com.sbmybatis.wbapps.controller.LibAboutLogin;
 import com.sbmybatis.wbapps.entity.WxUser;
 import com.sbmybatis.wbapps.respository.WxUserRepository;
 import com.sbmybatis.wbapps.service.interf.WxUserService;
@@ -20,12 +19,11 @@ public class WxUserServiceImpl implements WxUserService {
     @Transactional
     public CommonResult synchWxUserForLib(WxUser wxUser) {
         CommonResult cr=new CommonResult();
-        if (wxUserRepository.findOne(wxUser.getId())==null) {
+        if (wxUserRepository.findWxUserByWxCode(wxUser.getWxCode())==null) {
             LOGGER.info("同步成功");
             wxUserRepository.save(wxUser);
         }
         else {
-            cr.setState(500);
             cr.setMsg("已有用户不新增");
             LOGGER.info("已有用户不更新信息");
         }
@@ -34,9 +32,9 @@ public class WxUserServiceImpl implements WxUserService {
 
     @Override
     @Transactional
-    public CommonResult updateWxUserInfoByBkUsered(String bookCode,Long id) {
+    public CommonResult updateWxUserInfoByBkUsered(String bookCode,String code) {
         CommonResult cr=new CommonResult();
-        WxUser wxUser=wxUserRepository.findOne(id);
+        WxUser wxUser=wxUserRepository.findWxUserByWxCode(code);
         String bkUsered = wxUser.getBkUsered();
         String media=null;
         if(wxUser.getBkUsered()!=null){

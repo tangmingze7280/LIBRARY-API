@@ -14,5 +14,5 @@ public interface WxUserService {
      *  用户新增借书 项
      * @return
      */
-    public CommonResult updateWxUserInfoByBkUsered(String bookCode,Long id);
+    public CommonResult updateWxUserInfoByBkUsered(String bookCode,String code);
 }

@@ -35,7 +35,6 @@ public class WbappsApplicationTests {
     @Test
     public void saveTest(){
         WxUser wxUser=new WxUser();
-        wxUser.setId(1L);
     /*    wxUser.setWxCode("00000001");
         wxUser.setBkUsered("aaa");
         wxUser.setBookListNum("{aa}");
