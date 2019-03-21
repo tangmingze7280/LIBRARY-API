@@ -23,6 +23,7 @@ public class WxUser {
     private String wxCode;//微信号
     private String bookListNum;//书单号
     private String userName;//用户微信名
+    private String bkUsered;//接触的书籍以{xx,xx}的形式存入
     @Column
     public String getWxCode() {
         return wxCode;
@@ -57,13 +58,22 @@ public class WxUser {
         this.id = id;
     }
 
+    public String getBkUsered() {
+        return bkUsered;
+    }
+
+    public void setBkUsered(String bkUsered) {
+        this.bkUsered = bkUsered;
+    }
+
     @Override
     public String toString() {
         return "WxUser{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", wxCode='" + wxCode + '\'' +
                 ", bookListNum='" + bookListNum + '\'' +
                 ", userName='" + userName + '\'' +
+                ", bkUsered='" + bkUsered + '\'' +
                 '}';
     }
 }

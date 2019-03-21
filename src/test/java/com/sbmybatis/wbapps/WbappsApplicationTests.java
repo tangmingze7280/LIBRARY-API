@@ -1,6 +1,8 @@
 package com.sbmybatis.wbapps;
 
 import com.sbmybatis.wbapps.entity.Person;
+import com.sbmybatis.wbapps.entity.WxUser;
+import com.sbmybatis.wbapps.service.interf.WxUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -14,6 +16,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class WbappsApplicationTests {
     @Autowired
     Person person;
+    @Autowired
+    WxUserService wxUserService;
     Logger logger=LoggerFactory.getLogger(getClass());
     @Test
     public void contextLoads() {
@@ -28,6 +32,16 @@ public class WbappsApplicationTests {
         logger.error("错误日志");
         logger.info(person.toString());
     }
+    @Test
+    public void saveTest(){
+        WxUser wxUser=new WxUser();
+        wxUser.setId(1L);
+    /*    wxUser.setWxCode("00000001");
+        wxUser.setBkUsered("aaa");
+        wxUser.setBookListNum("{aa}");
+        wxUser.setUserName("admin");*/
 
+        wxUserService.synchWxUserForLib(wxUser);
+    }
 }
 
