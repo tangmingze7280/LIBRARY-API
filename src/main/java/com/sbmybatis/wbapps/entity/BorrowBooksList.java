@@ -2,6 +2,7 @@ package com.sbmybatis.wbapps.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -11,6 +12,7 @@ public class BorrowBooksList  {
     private Long bookId ;//BookInfo的id
     private String wxCode;//关联微信号  默认同一种书只能借一种
     @Id
+    @GeneratedValue
     public Long getId() {
         return id;
     }
