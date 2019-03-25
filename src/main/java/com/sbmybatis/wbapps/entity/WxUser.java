@@ -23,7 +23,7 @@ public class WxUser {
     private String wxCode;//微信号 openId
     private String bookListNum;//书单号
     private String nickName;//用户微信名
-    private String bkUsered;//接触的书籍以{xx,xx}的形式存入
+    private String bkUsered;//借出的的书籍以{xx,xx}的形式存入
     private String avatarUrl;//头像
     private String city;//市
     private String country;//国籍

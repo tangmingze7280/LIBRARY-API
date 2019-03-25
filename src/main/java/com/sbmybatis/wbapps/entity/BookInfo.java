@@ -13,7 +13,7 @@ public class BookInfo {
     private String bookName;//图书名称
     private Long bkRepertory;//当前图书库存
     private String bookIntroduce;//图书简介
-    private Blob bookUserCode;//图书被解除的详细信息{17853537280,wb0123} wx_code的 编码集合
+    private Blob bookUserCode;//图书被借走的详细信息{17853537280,wb0123} wx_code的 编码集合
     private Long bookUseredAmount;//图书总库存
     private String bookType;
     @Id

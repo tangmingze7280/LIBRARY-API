@@ -3,6 +3,9 @@ package com.sbmybatis.wbapps.entity;
 import javax.persistence.*;
 import java.sql.Blob;
 
+/**
+ * 书单
+ */
 @Entity
 public class BookList {
 
