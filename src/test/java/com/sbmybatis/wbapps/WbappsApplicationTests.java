@@ -2,6 +2,7 @@ package com.sbmybatis.wbapps;
 
 import com.sbmybatis.wbapps.entity.Person;
 import com.sbmybatis.wbapps.entity.WxUser;
+import com.sbmybatis.wbapps.service.interf.ClassifService;
 import com.sbmybatis.wbapps.service.interf.WxUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,8 @@ public class WbappsApplicationTests {
     @Autowired
     WxUserService wxUserService;
     Logger logger=LoggerFactory.getLogger(getClass());
+    @Autowired
+    ClassifService classifService;
     @Test
     public void contextLoads() {
 //        System.out.println(person);
@@ -39,8 +42,9 @@ public class WbappsApplicationTests {
         wxUser.setBkUsered("aaa");
         wxUser.setBookListNum("{aa}");
         wxUser.setUserName("admin");*/
-
-        wxUserService.synchWxUserForLib(wxUser);
+//        logger.info(classifService.getClassType().toString());
+        logger.info(classifService.getAllParentByNumber().toString());
+//        wxUserService.synchWxUserForLib(wxUser);
     }
 }
 
