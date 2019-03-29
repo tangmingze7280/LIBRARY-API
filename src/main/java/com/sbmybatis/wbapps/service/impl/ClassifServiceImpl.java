@@ -14,6 +14,12 @@ import java.util.List;
 @Service
 public class ClassifServiceImpl implements ClassifService {
     private static final Logger logger= LoggerFactory.getLogger(ClassifServiceImpl.class);
+    private static String[] num=new String[26];
+    static{
+        for(int i=0;i<26;i++){
+            num[i]=(char)('A'+i)+"";
+        }
+    }
     @Autowired
     private ClassificationsRepository classificationsRepository;
     @Override
@@ -23,10 +29,6 @@ public class ClassifServiceImpl implements ClassifService {
 
     @Override
     public List<Classifications> getAllParentByNumber() {
-        String[] num=new String[26];
-        for(int i=0;i<26;i++){
-            num[i]=(char)('A'+i)+"";
-        }
         logger.info(Arrays.toString(num));
         return classificationsRepository.getAllByNumberIn(num);
     }

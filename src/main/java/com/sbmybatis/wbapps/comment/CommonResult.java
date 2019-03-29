@@ -28,4 +28,13 @@ public class CommonResult {
     public void setData(Object data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "CommonResult{" +
+                "state=" + state +
+                ", msg='" + msg + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }

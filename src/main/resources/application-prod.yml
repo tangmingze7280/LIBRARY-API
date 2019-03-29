@@ -1,0 +1,76 @@
+##默认使用配置
+#
+#
+##公共配置与profiles选择无关
+#mybatis:
+#  #参数文件位置
+#  typeAliasesPackage: com.sbmybatis.wbapps.entity
+#  #映射文件位置
+#  mapperLocations: classpath:mapper/*.xml
+#
+#server:
+#  port: 8999
+#  context-path: /library
+#
+##开发配置
+#spring:
+#  profiles:
+#    active: prod
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: UTC
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    url: jdbc:mysql://localhost:3306/baselibrary?useUnicode=true&characterEncoding=utf8
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.jdbc.Driver
+#    filters: stat,wall,log4j     #druid监控配置
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      show-sql: true
+#    dbcp2:
+#      min-idle: 5         #数据库连接池的最小维持连接数
+#      initial-size: 5     #初始化提供的连接数
+#      max-total: 5          #最大的连接数
+#      max-wait-millis: 200        #等待连接获取的最大超时时间
+#  mvc:
+#    favicon:
+#      enabled: true
+#
+#####分割线——————————————
+#person:
+#  lastName: ${random.value}
+#  age: ${random.int}
+#  wtf: [a,b,c]
+#  lit:
+#    - xaa
+#    - ${random.uuid}
+#  mas: {a: abc,b: abc}
+#  time: 2019/01/01
+#  flag: false
+#
+#
+##分割线------------------------------
+#logging:
+#  level: trace
+#  #path不设置 只会在控制台输出 可以使用绝对路径； 想要指定特定路径 需要用 file
+#  path: /spring/log
+#  #pattern:
+#  #  file: #指定文件中日志输出格式
+#  #  console: #控制台输出格式
+#
+##分割线------------------------------
+#text:
+#  tname: 唐鸣泽${text.age}
+#  age: 21
+#  a:
+#    - 1
+#    - 2
+#    - 3
+#    - ${random.int}
+#  map:
+#     a: abc
+#     b: b
+#  lit: [1,2,3,4,5]

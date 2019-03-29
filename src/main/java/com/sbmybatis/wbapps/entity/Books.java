@@ -1,7 +1,6 @@
 package com.sbmybatis.wbapps.entity;
 
 import javax.persistence.*;
-import java.sql.Blob;
 import java.util.Date;
 
 @Entity
@@ -17,18 +16,18 @@ public class Books {
     private Date pubdate;
     private String classNum;
     private String callNumber;
-    private Blob author;
-    private Blob translator;
-    private Blob authorIntroduction;
-    private Blob translatorIntroduction;
+    private String author;
+    private String translator;
+    private String authorIntroduction;
+    private String translatorIntroduction;
     private String binding;
     private float price;
     private Integer page;
     private Integer word;
-    private Blob description;
-    private Blob catalog;
-    private Blob preview;
-    private Blob imgs;
+    private String description;
+    private String catalog;
+    private String preview;
+    private String imgs;
     private Date createdAt;
     private Date updatedAt;
     private Date deletedAt;
@@ -123,41 +122,41 @@ public class Books {
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Blob author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getTranslator() {
+    public String getTranslator() {
         return translator;
     }
 
-    public void setTranslator(Blob translator) {
+    public void setTranslator(String translator) {
         this.translator = translator;
     }
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getAuthorIntroduction() {
+    public String getAuthorIntroduction() {
         return authorIntroduction;
     }
 
-    public void setAuthorIntroduction(Blob authorIntroduction) {
+    public void setAuthorIntroduction(String authorIntroduction) {
         this.authorIntroduction = authorIntroduction;
     }
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getTranslatorIntroduction() {
+    public String getTranslatorIntroduction() {
         return translatorIntroduction;
     }
 
-    public void setTranslatorIntroduction(Blob translatorIntroduction) {
+    public void setTranslatorIntroduction(String translatorIntroduction) {
         this.translatorIntroduction = translatorIntroduction;
     }
 
@@ -195,41 +194,41 @@ public class Books {
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Blob description) {
+    public void setDescription(String description) {
         this.description = description;
     }
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getCatalog() {
+    public String getCatalog() {
         return catalog;
     }
 
-    public void setCatalog(Blob catalog) {
+    public void setCatalog(String catalog) {
         this.catalog = catalog;
     }
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getPreview() {
+    public String getPreview() {
         return preview;
     }
 
-    public void setPreview(Blob preview) {
+    public void setPreview(String preview) {
         this.preview = preview;
     }
     @Lob
     @Column( nullable = true, columnDefinition = "Text")
     @Basic(fetch = FetchType.LAZY )//懒惰加载
-    public Blob getImgs() {
+    public String getImgs() {
         return imgs;
     }
 
-    public void setImgs(Blob imgs) {
+    public void setImgs(String imgs) {
         this.imgs = imgs;
     }
 
@@ -255,5 +254,37 @@ public class Books {
 
     public void setDeletedAt(Date deletedAt) {
         this.deletedAt = deletedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", originTitle='" + originTitle + '\'' +
+                ", altTitle='" + altTitle + '\'' +
+                ", subtitle='" + subtitle + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", language='" + language + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", pubdate=" + pubdate +
+                ", classNum='" + classNum + '\'' +
+                ", callNumber='" + callNumber + '\'' +
+                ", author=" + author +
+                ", translator=" + translator +
+                ", authorIntroduction=" + authorIntroduction +
+                ", translatorIntroduction=" + translatorIntroduction +
+                ", binding='" + binding + '\'' +
+                ", price=" + price +
+                ", page=" + page +
+                ", word=" + word +
+                ", description=" + description +
+                ", catalog=" + catalog +
+                ", preview=" + preview +
+                ", imgs=" + imgs +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
+                '}';
     }
 }

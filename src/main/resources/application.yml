@@ -23,7 +23,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/baselibrary?useUnicode=true&characterEncoding=utf8
     username: root
-    password:
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
     filters: stat,wall,log4j     #druid监控配置
   jpa:
