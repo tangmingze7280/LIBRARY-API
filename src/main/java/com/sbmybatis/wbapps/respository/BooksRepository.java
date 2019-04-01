@@ -5,8 +5,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
+import java.awt.print.Book;
 import java.util.List;
 
 public interface BooksRepository extends JpaRepository<Books,Long>, JpaSpecificationExecutor<Books> , PagingAndSortingRepository<Books,Long> {
@@ -16,4 +18,6 @@ public interface BooksRepository extends JpaRepository<Books,Long>, JpaSpecifica
 
     List<Books> findAllByClassNumLike(String classNum, Pageable pageable);
     Books findBooksByTitleLike(String title);
+    @Query(value = "select t.title from books t where instr(t.title,?)>0  limit 0, 5 ", nativeQuery = true)
+    List<String> findBooksNamesByTitleLike(String title);
 }

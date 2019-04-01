@@ -1,0 +1,9 @@
+spring:
+  profiles: dev
+server:
+  tomcat:
+    uri-encoding: utf-8
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: Q!W@e3r4
+    key-alias: tomcat

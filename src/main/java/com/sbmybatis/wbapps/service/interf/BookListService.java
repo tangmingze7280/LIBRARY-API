@@ -11,4 +11,8 @@ public interface BookListService {
     default Books getBookListByTitle(String bookName){
         return null;
     }
+    default List<String> getBooksNamesByTitleLike(String simpleTitle){
+        return null;
+    }
+
 }

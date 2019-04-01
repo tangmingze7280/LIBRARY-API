@@ -1,18 +1,15 @@
 package com.sbmybatis.wbapps.service.impl;
 
-import com.sbmybatis.wbapps.controller.BookClassifiController;
 import com.sbmybatis.wbapps.entity.Books;
 import com.sbmybatis.wbapps.respository.BooksRepository;
 import com.sbmybatis.wbapps.service.interf.BookListService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class BookListServiceImpl implements BookListService {
@@ -29,7 +26,10 @@ public class BookListServiceImpl implements BookListService {
 
     @Override
     public Books getBookListByTitle(String bookName) {
-
         return booksRepository.findBooksByTitleLike(bookName);
+    }
+    @Override
+    public List<String> getBooksNamesByTitleLike(String simpleTitle) {
+        return booksRepository.findBooksNamesByTitleLike(simpleTitle);
     }
 }
