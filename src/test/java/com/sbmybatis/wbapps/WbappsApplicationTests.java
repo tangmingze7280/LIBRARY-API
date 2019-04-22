@@ -5,6 +5,7 @@ import com.sbmybatis.wbapps.entity.Person;
 import com.sbmybatis.wbapps.entity.WxUser;
 import com.sbmybatis.wbapps.service.interf.BookListService;
 import com.sbmybatis.wbapps.service.interf.ClassifService;
+import com.sbmybatis.wbapps.service.interf.RecomBookService;
 import com.sbmybatis.wbapps.service.interf.WxUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,6 +32,9 @@ public class WbappsApplicationTests {
     BookListService bookListService;*/
     @Autowired
     BookListService bookListService;
+    @Autowired
+    RecomBookService recomBookService;
+
     @Test
     public void contextLoads() {
 //        System.out.println(person);
@@ -59,6 +63,9 @@ public class WbappsApplicationTests {
         for(Books books:list){
             logger.info(books.toString());
         }*/
+//        List<Books> list=bookListService.getBookListByClassif("%A%",7,0);
+        List<Books> list=bookListService.findAllBooksConllectionByUserCode("oR5YB5SwlSZS0m-RqCXFMhkxAVr0",7,0);
+        logger.info(list.toString());
     }
 }
 

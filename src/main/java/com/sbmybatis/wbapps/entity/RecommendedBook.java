@@ -4,49 +4,52 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+/**
+ * 收藏表
+ */
 @Entity
 @Table(name = "recommended_book", schema = "baselibrary", catalog = "")
 public class RecommendedBook {
-    private int id;
-    private int wechatUserId;
-    private int bookId;
+    private Integer id;
+    private String wechatUserId;
+    private String bookId;
     private String comment;
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
 
     @Id
+    @GeneratedValue
     @Column(name = "id")
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     @Basic
     @Column(name = "wechat_user_id")
-    public int getWechatUserId() {
+    public String getWechatUserId() {
         return wechatUserId;
     }
 
-    public void setWechatUserId(int wechatUserId) {
+    public void setWechatUserId(String wechatUserId) {
         this.wechatUserId = wechatUserId;
     }
 
-    @Basic
-    @Column(name = "book_id")
-    public int getBookId() {
+    @Column(name = "book_id" )
+    public String getBookId() {
         return bookId;
     }
 
-    public void setBookId(int bookId) {
+    public void setBookId(String bookId) {
         this.bookId = bookId;
     }
 
-    @Basic
-    @Column(name = "comment")
+
+    @Column(name = "comment" ,nullable = false)
     public String getComment() {
         return comment;
     }
@@ -55,8 +58,8 @@ public class RecommendedBook {
         this.comment = comment;
     }
 
-    @Basic
-    @Column(name = "created_at")
+
+    @Column(name = "created_at" ,nullable = false)
     public Timestamp getCreatedAt() {
         return createdAt;
     }
@@ -65,8 +68,8 @@ public class RecommendedBook {
         this.createdAt = createdAt;
     }
 
-    @Basic
-    @Column(name = "updated_at")
+
+    @Column(name = "updated_at" ,nullable = false)
     public Timestamp getUpdatedAt() {
         return updatedAt;
     }
@@ -75,8 +78,8 @@ public class RecommendedBook {
         this.updatedAt = updatedAt;
     }
 
-    @Basic
-    @Column(name = "deleted_at")
+
+    @Column(name = "deleted_at" ,nullable = false)
     public Timestamp getDeletedAt() {
         return deletedAt;
     }

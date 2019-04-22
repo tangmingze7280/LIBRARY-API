@@ -14,5 +14,5 @@ public interface BookListService {
     default List<String> getBooksNamesByTitleLike(String simpleTitle){
         return null;
     }
-
+    List<Books> findAllBooksConllectionByUserCode(String userCode,int pageSize,int pageNum);
 }

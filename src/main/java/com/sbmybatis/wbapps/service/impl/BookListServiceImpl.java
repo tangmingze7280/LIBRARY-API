@@ -26,10 +26,15 @@ public class BookListServiceImpl implements BookListService {
 
     @Override
     public Books getBookListByTitle(String bookName) {
-        return booksRepository.findBooksByTitleLike(bookName);
+        return booksRepository.findBooksByTitleLikeAndIdMAX(bookName);
     }
     @Override
     public List<String> getBooksNamesByTitleLike(String simpleTitle) {
         return booksRepository.findBooksNamesByTitleLike(simpleTitle);
+    }
+
+    @Override
+    public List<Books> findAllBooksConllectionByUserCode(String userCode, int pageSize, int pageNum) {
+        return booksRepository.findAllBooksConllectionByUserCode(userCode,pageNum,pageSize);
     }
 }

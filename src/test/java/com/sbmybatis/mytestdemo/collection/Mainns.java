@@ -16,4 +16,19 @@ public class Mainns {
             System.out.println(i);
 
     }
+    @Test
+    public void  test2(){
+        xax();
+
+    }
+    public int xax(){
+        try {
+            throw new RuntimeException();
+        }catch(Exception e){
+            e.printStackTrace();
+            return 2;
+        }finally{
+            System.out.println(12121);
+        }
+    }
 }

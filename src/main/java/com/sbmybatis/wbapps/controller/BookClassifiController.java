@@ -32,8 +32,9 @@ public class BookClassifiController {
             }
         }
         CommonResult commonResult =new CommonResult();
-        commonResult.setData(result);
-        LOGGER.info(commonResult.toString());
+//        commonResult.setData(result);
+        commonResult.setData(allParentByNumber.subList(0,5));
+//        LOGGER.info(commonResult.toString());
       /*  Map<String,String> parse = (Map)JSONUtils.parse("{\"a\":\"20\"}");
         LOGGER.info(parse.get("a"));*/
         return commonResult;
