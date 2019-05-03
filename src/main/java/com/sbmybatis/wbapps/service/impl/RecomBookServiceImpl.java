@@ -31,10 +31,20 @@ public class RecomBookServiceImpl implements RecomBookService {
     public boolean updataUserConllectionByBooksCode(RecommendedBook recommendedBook) {
         LOGGER.info(recommendedBook.toString());
         RecommendedBook savePoint = recomBookRepository.save(recommendedBook);
-        return savePoint.getBookId().equals(null)&&savePoint.getBookId().equals("");
+        return !(savePoint.getBookId().equals(null)&&savePoint.getBookId().equals(""));
     }
     public boolean  checkOnlyItem(String bookId,String userId){
         List list=recomBookRepository.findByBookIdAndAndWechatUserId(bookId,userId);
         return list.size()!=0;
+    }
+
+    @Override
+    public boolean delCollectionByParam(String wxCode, String bookCode) {
+        try{
+            recomBookRepository.delete(recomBookRepository.findByBookIdAndWechatUserId( bookCode,wxCode));
+        }catch(Exception e){
+            return false;
+        }
+        return true;
     }
 }

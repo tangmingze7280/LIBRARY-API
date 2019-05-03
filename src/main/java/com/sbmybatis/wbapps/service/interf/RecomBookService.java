@@ -16,5 +16,6 @@ public interface RecomBookService {
     default boolean updataUserConllectionByBooksCode(RecommendedBook recommendedBook){
         return false;
     }
-    public boolean  checkOnlyItem(String bookId,String userId);
+    public boolean checkOnlyItem(String bookId,String userId);
+    public boolean delCollectionByParam(String wxCode,String bookCode);
 }

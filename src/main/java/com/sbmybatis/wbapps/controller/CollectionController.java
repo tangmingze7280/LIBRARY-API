@@ -59,9 +59,14 @@ public class CollectionController {
         }
         return cr;
     }
-    @RequestMapping("/collection/deleteCollection")
+    @RequestMapping("/deleteCollection")
     public CommonResult delConllectionByParam(@RequestParam String userCode,@RequestParam String bookCode){
-        LOGGER.info(userCode,bookCode);
-        return null;
+        LOGGER.info(userCode+bookCode);
+        CommonResult cr =new CommonResult();
+        if(recomBookService.delCollectionByParam(userCode,bookCode))
+            cr.setMsg("删除成功");
+        else
+            cr.setMsg("删除失败");
+        return cr;
     }
 }
