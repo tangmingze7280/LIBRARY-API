@@ -49,7 +49,7 @@ public class RecommendedBook {
     }
 
 
-    @Column(name = "comment" ,nullable = false)
+    @Column(name = "comment" )
     public String getComment() {
         return comment;
     }
@@ -59,7 +59,7 @@ public class RecommendedBook {
     }
 
 
-    @Column(name = "created_at" ,nullable = false)
+    @Column(name = "created_at" )
     public Timestamp getCreatedAt() {
         return createdAt;
     }
@@ -69,7 +69,7 @@ public class RecommendedBook {
     }
 
 
-    @Column(name = "updated_at" ,nullable = false)
+    @Column(name = "updated_at" )
     public Timestamp getUpdatedAt() {
         return updatedAt;
     }
@@ -79,7 +79,7 @@ public class RecommendedBook {
     }
 
 
-    @Column(name = "deleted_at" ,nullable = false)
+    @Column(name = "deleted_at")
     public Timestamp getDeletedAt() {
         return deletedAt;
     }
