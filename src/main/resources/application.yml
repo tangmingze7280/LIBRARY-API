@@ -11,7 +11,7 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
 
 server:
-  port: 8999
+  port: 433
   context-path: /library
 
 #开发配置
