@@ -27,10 +27,10 @@ public class LibAboutLoginController {
 
         return wxUserService.synchWxUserForLib(wxUser);
     }
-    @GetMapping("/borrow")
+    /*@GetMapping("/borrow")
     public CommonResult borrowOneBook(@RequestParam String bookCode,@RequestParam String code){
         return wxUserService.updateWxUserInfoByBkUsered(bookCode,code);
-    }
+    }*/
 
     /**
      * 登陆同步用户

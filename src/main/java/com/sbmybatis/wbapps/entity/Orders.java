@@ -1,9 +1,6 @@
 package com.sbmybatis.wbapps.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -12,7 +9,7 @@ import java.util.Objects;
 public class Orders {
     private int id;
     private int status;
-    private int wechatUserId;
+    private String wechatUserId;
     private String isbn;
     private int libraryId;
     private Date shouldTakeTime;
@@ -28,6 +25,7 @@ public class Orders {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -48,11 +46,11 @@ public class Orders {
 
     @Basic
     @Column(name = "wechat_user_id")
-    public int getWechatUserId() {
+    public String getWechatUserId() {
         return wechatUserId;
     }
 
-    public void setWechatUserId(int wechatUserId) {
+    public void setWechatUserId(String wechatUserId) {
         this.wechatUserId = wechatUserId;
     }
 

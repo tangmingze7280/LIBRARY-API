@@ -3,6 +3,7 @@ package com.sbmybatis.wbapps.service.interf;
 import com.sbmybatis.wbapps.entity.Orders;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * 借书   （订单）
@@ -25,7 +26,7 @@ public interface OrderService {
      * @param timestamp
      * @return
      */
-    default public boolean giveBackBook(String wxCode, String bookId, Timestamp timestamp){
+    default public boolean giveBackBook(String wxCode, String bookId){
         return true;
     }
 
@@ -38,5 +39,8 @@ public interface OrderService {
      */
     default public boolean renewBook(String renewCount,String wxCode, String bookId,String updateTime ){
         return true;
+    }
+    default public List<Orders> getBorrowwList(String wechatUserId){
+        return null;
     }
 }
