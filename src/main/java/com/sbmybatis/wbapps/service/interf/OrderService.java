@@ -1,5 +1,6 @@
 package com.sbmybatis.wbapps.service.interf;
 
+import com.sbmybatis.wbapps.bean.RistBookMap;
 import com.sbmybatis.wbapps.entity.Orders;
 
 import java.sql.Timestamp;
@@ -23,7 +24,7 @@ public interface OrderService {
      *  update
      * @param wxCode
      * @param bookId
-     * @param timestamp
+     *
      * @return
      */
     default public boolean giveBackBook(String wxCode, String bookId){
@@ -40,7 +41,22 @@ public interface OrderService {
     default public boolean renewBook(String renewCount,String wxCode, String bookId,String updateTime ){
         return true;
     }
-    default public List<Orders> getBorrowwList(String wechatUserId){
+
+    /**
+     * 获取已借的集合
+     * @param wechatUserId
+     * @return
+     */
+    default public List<RistBookMap> getBorrowwList(String wechatUserId){
+        return null;
+    }
+
+    /**
+     * 没还的书
+     * @param wechatUserId
+     * @return
+     */
+    default List<Orders> getNotReturnBookList(String wechatUserId){
         return null;
     }
 }

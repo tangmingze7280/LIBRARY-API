@@ -1,5 +1,6 @@
 package com.sbmybatis.wbapps.controller;
 
+import com.sbmybatis.wbapps.bean.RistBookMap;
 import com.sbmybatis.wbapps.comment.CommonResult;
 import com.sbmybatis.wbapps.entity.Orders;
 import com.sbmybatis.wbapps.service.interf.OrderService;
@@ -26,7 +27,7 @@ public class BorrowBksController {
     @RequestMapping("/blist")
     public CommonResult getBorrowListById(@RequestParam String wxId){
         CommonResult commonResult= new CommonResult();
-        List<Orders> borrowwList = orderService.getBorrowwList(wxId);
+        List<RistBookMap> borrowwList = orderService.getBorrowwList(wxId);
         LOGGER.info(borrowwList.toString());
         commonResult.setData(borrowwList);
         return  commonResult;
@@ -43,8 +44,8 @@ public class BorrowBksController {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar=Calendar.getInstance();
         calendar.add(Calendar.DATE, 13);
-        orders.setActualReturnTime(sdf.format(calendar.getTime()));
-        orders.setActualTakeTime("0");
+        orders.setActualReturnTime(sdf.format(calendar.getTime()));//应还时间
+        orders.setActualTakeTime("0");//逾期天数
         if(orderService.addOrderByParams(orders))
             commonResult.setMsg("借阅成功，13天");
         else
@@ -61,4 +62,11 @@ public class BorrowBksController {
         }
         return commonResult;
     }
+    /*@RequestMapping("/getNotList")
+    public CommonResult getNotReturnBookList(@RequestParam Map<String,Object> map){
+        CommonResult commonResult=new CommonResult();
+        List<Orders> notReturnBookList = orderService.getNotReturnBookList((String) map.get("wxId"));
+        commonResult.setData(notReturnBookList);
+        return commonResult;
+    }*/
 }

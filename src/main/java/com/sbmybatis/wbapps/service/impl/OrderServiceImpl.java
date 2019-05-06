@@ -1,5 +1,6 @@
 package com.sbmybatis.wbapps.service.impl;
 
+import com.sbmybatis.wbapps.bean.RistBookMap;
 import com.sbmybatis.wbapps.entity.Orders;
 import com.sbmybatis.wbapps.respository.OrderRepository;
 import com.sbmybatis.wbapps.service.interf.OrderService;
@@ -10,6 +11,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -55,7 +57,19 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Orders> getBorrowwList(String wechatUserId) {
-        return orderRepository.getAllByWechatUserId(wechatUserId);
+    public List<RistBookMap> getBorrowwList(String wechatUserId) {
+//        RistBookMap
+        List<Object[]> bookListRist = orderRepository.getBookListRistByParam(wechatUserId);
+        List<RistBookMap> resList=new LinkedList<>();
+        for(Object[] objs:bookListRist)
+            resList.add(new RistBookMap((Integer)objs[0],(Integer)objs[1],(String)objs[2],(String)objs[3],(String)objs[4]));
+        return resList;
+    }
+
+    @Override
+    public List<Orders> getNotReturnBookList(String wechatUserId) {
+
+
+        return orderRepository.getAllByWechatUserIdAndActualReturnTimeIsNotNullAndFineIsNull(wechatUserId);
     }
 }
