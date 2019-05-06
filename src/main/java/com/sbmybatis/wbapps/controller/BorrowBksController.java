@@ -54,7 +54,7 @@ public class BorrowBksController {
     }
     @RequestMapping("/giveback")
     public CommonResult giveBackBook(@RequestParam Map<String,Object> map){
-        boolean b = orderService.giveBackBook((String) map.get(""), (String) map.get(""));
+        boolean b = orderService.giveBackBook((String) map.get("wxId"), (String) map.get("bookCode"));
         CommonResult commonResult=new CommonResult();
         commonResult.setMsg("还书成功");
         if(!b){

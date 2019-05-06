@@ -62,7 +62,7 @@ public class OrderServiceImpl implements OrderService {
         List<Object[]> bookListRist = orderRepository.getBookListRistByParam(wechatUserId);
         List<RistBookMap> resList=new LinkedList<>();
         for(Object[] objs:bookListRist)
-            resList.add(new RistBookMap((Integer)objs[0],(Integer)objs[1],(String)objs[2],(String)objs[3],(String)objs[4]));
+            resList.add(new RistBookMap((Integer)objs[0],(Integer)objs[1],(String)objs[2],(String)objs[3],(String)objs[4],(Integer)objs[5]));
         return resList;
     }
 

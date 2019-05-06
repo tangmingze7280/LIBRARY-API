@@ -8,6 +8,11 @@ public class RistBookMap {
     private String isbn;
     private String actualReturnTime;
     private String bookName;
+    private Integer finePaied;
+
+    public Integer getId() {
+        return id;
+    }
 
     public RistBookMap(Integer id, Integer status, String isbn, String actualReturnTime, String bookName) {
         this.id = id;
@@ -15,13 +20,6 @@ public class RistBookMap {
         this.isbn = isbn;
         this.actualReturnTime = actualReturnTime;
         this.bookName = bookName;
-    }
-
-    public RistBookMap() {
-    }
-
-    public Integer getId() {
-        return id;
     }
 
     public void setId(Integer id) {
@@ -60,21 +58,24 @@ public class RistBookMap {
         this.bookName = bookName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RistBookMap that = (RistBookMap) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(status, that.status) &&
-                Objects.equals(isbn, that.isbn) &&
-                Objects.equals(actualReturnTime, that.actualReturnTime) &&
-                Objects.equals(bookName, that.bookName);
+    public Integer getFinePaied() {
+        return finePaied;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, status, isbn, actualReturnTime, bookName);
+    public void setFinePaied(Integer finePaied) {
+        this.finePaied = finePaied;
+    }
+
+    public RistBookMap() {
+    }
+
+    public RistBookMap(Integer id, Integer status, String isbn, String actualReturnTime, String bookName, Integer finePaied) {
+        this.id = id;
+        this.status = status;
+        this.isbn = isbn;
+        this.actualReturnTime = actualReturnTime;
+        this.bookName = bookName;
+        this.finePaied = finePaied;
     }
 
     @Override
@@ -85,6 +86,7 @@ public class RistBookMap {
                 ", isbn='" + isbn + '\'' +
                 ", actualReturnTime='" + actualReturnTime + '\'' +
                 ", bookName='" + bookName + '\'' +
+                ", finePaied=" + finePaied +
                 '}';
     }
 }
