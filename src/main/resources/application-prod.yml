@@ -7,4 +7,4 @@ server:
     key-store: classpath:www.gttview.club.jks
     key-store-password: 789i61k7l2w92
     key-alias: tomcat
-    key-store-type: JKS
+    key-store-type: sun.security.provider.JavaKeyStore.JKS

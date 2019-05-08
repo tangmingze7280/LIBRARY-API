@@ -10,10 +10,10 @@ import java.util.Objects;
 @Entity
 public class Reviews {
     private int id;
-    private int bookId;
-    private int wechatUserId;
-    private Integer score;
-    private String content;
+    private String bookId;
+    private String wechatUserId;
+    private Integer score;//评分
+    private String content;//评论
     private Timestamp createdAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
@@ -30,21 +30,21 @@ public class Reviews {
 
     @Basic
     @Column(name = "book_id")
-    public int getBookId() {
+    public String getBookId() {
         return bookId;
     }
 
-    public void setBookId(int bookId) {
+    public void setBookId(String bookId) {
         this.bookId = bookId;
     }
 
     @Basic
     @Column(name = "wechat_user_id")
-    public int getWechatUserId() {
+    public String getWechatUserId() {
         return wechatUserId;
     }
 
-    public void setWechatUserId(int wechatUserId) {
+    public void setWechatUserId(String wechatUserId) {
         this.wechatUserId = wechatUserId;
     }
 
