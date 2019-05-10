@@ -19,13 +19,19 @@ public class WxUserServiceImpl implements WxUserService {
     @Transactional
     public CommonResult synchWxUserForLib(WxUser wxUser) {
         CommonResult cr=new CommonResult();
-        if (wxUserRepository.findWxUserByWxCode(wxUser.getWxCode())==null) {
+        WxUser wxUserByWxCode = wxUserRepository.findWxUserByWxCode(wxUser.getWxCode());
+        if (wxUserByWxCode==null) {
             LOGGER.info("同步成功");
             wxUserRepository.save(wxUser);
-        }
-        else {
-            cr.setMsg("已有用户不新增");
-            LOGGER.info("已有用户不更新信息");
+        } else {
+            if(wxUser.equals(wxUserByWxCode)) {
+                cr.setMsg("已有用户不新增");
+                LOGGER.info("已有用户不更新信息");
+            }else{
+                LOGGER.info("同步成功");
+                wxUser.setId(wxUserByWxCode.getId());
+                wxUserRepository.saveAndFlush(wxUser);
+            }
         }
         return cr;
     }

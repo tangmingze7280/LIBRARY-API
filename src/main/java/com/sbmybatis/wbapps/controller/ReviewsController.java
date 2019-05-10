@@ -30,7 +30,7 @@ public class ReviewsController {
         reviews.setUpdatedAt(new Timestamp(new Date().getTime()));
         reviews.setBookId((String) map.get("bookId"));
         reviews.setWechatUserId((String)map.get("wxId"));
-        reviews.setScore((Integer)map.get("score"));
+        reviews.setScore(Integer.valueOf((String)map.get("score")));
         reviews.setContent((String)map.get("content"));
         if(reviewsService.addReviewsForBooks(reviews))
             commonResult.setMsg("评论成功");
@@ -51,15 +51,25 @@ public class ReviewsController {
     @RequestMapping("/getListUser")
     public CommonResult getListUser(@RequestParam Map<String,Object> map){
         CommonResult commonResult=new CommonResult();
-        List reUserList = reviewsService.getReviewsListOfUserId((String) map.get("wxId"));
-        commonResult.setData(reUserList);
+        try{
+            List reUserList = reviewsService.getReviewsListOfUserId((String) map.get("wxId"));
+            commonResult.setData(reUserList);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return commonResult;
     }
     @RequestMapping("/getListbookId")
     public CommonResult getListbookId(@RequestParam Map<String,Object> map){
         CommonResult commonResult=new CommonResult();
-        List bookIdList = reviewsService.getReviewsListOfBooks((String) map.get("bookId"));
+        List bookIdList = reviewsService.getReviewsListOfBooks((String) map.get("bookCode"));
         commonResult.setData(bookIdList);
         return commonResult;
+    }
+    @RequestMapping("/del")
+    public CommonResult delListbookId(@RequestParam Map<String,Object> map){
+
+        return null;
     }
 }

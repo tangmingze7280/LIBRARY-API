@@ -14,7 +14,7 @@ public interface ReviewsService {
     default List  getReviewsListOfBooks(String bookId){
         return null;
     }
-    default List getReviewsListOfUserId(String wxId){
+    default List getReviewsListOfUserId(String wxId) {
         return null;
     }
 }
