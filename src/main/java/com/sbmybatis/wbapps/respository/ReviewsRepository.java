@@ -21,5 +21,5 @@ public interface ReviewsRepository extends JpaRepository<Reviews,Integer> , JpaS
     @Query(value=" SELECT w.wx_code,w.avatar_url,r.content,r.score,w.nick_name,r.created_at,b.title,r.id FROM wx_user w, reviews r join books b  on b.isbn=r.book_id   where r.book_id=?1  ",nativeQuery = true)
     List<Object[]> getAllByBookIdByMyself(String bookId);
     @Modifying
-    void deleteByBookIdAndWechatUserIdAndId(String wxId, String bookId,Integer id);
+    void deleteByWechatUserIdAndId(String bookId,Integer id);
 }

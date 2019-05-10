@@ -17,4 +17,7 @@ public interface ReviewsService {
     default List getReviewsListOfUserId(String wxId) {
         return null;
     }
+    default void delListbookId(String wxId,Integer id){
+
+    }
 }

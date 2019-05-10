@@ -29,7 +29,7 @@ public class ReviewsServiceImpl implements ReviewsService {
     @Override
     public boolean delReviewsForBooks(String wxId, String bookId,Integer id) {
         try{
-            reviewsRepository.deleteByBookIdAndWechatUserIdAndId( wxId, bookId,id);
+            reviewsRepository.deleteByWechatUserIdAndId( wxId,id);
         }catch(Exception e){
             e.printStackTrace();
             return false;
@@ -61,5 +61,8 @@ public class ReviewsServiceImpl implements ReviewsService {
             rlist.add(reviews);
         }
         return rlist;
+    }
+    public void delListbookId(String wxId,Integer id){
+        reviewsRepository.deleteByWechatUserIdAndId(wxId, id);
     }
 }
