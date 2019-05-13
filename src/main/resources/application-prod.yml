@@ -4,7 +4,8 @@ server:
   tomcat:
     uri-encoding: utf-8
   ssl:
-    key-store: classpath:www.gttview.club.jks
-    key-store-password: 789i61k7l2w92
-    key-alias: tomcat
-    key-store-type: sun.security.provider.JavaKeyStore.JKS
+    key-store: classpath:sslhttps.jks
+    key-store-password: 152821b95f451
+    key-alias: www.gttview.club
+    key-store-type: JKS
+    enabled: true

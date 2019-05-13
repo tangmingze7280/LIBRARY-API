@@ -1,6 +1,5 @@
 package com.sbmybatis.wbapps.bean;
 
-import com.sun.istack.internal.NotNull;
 
 public class ReviewsMap {
     private String wxId;

@@ -11,7 +11,7 @@ mybatis:
   mapperLocations: classpath:mapper/*.xml
 
 server:
-  port: 433
+  port: 443
   context-path: /library
 
 #开发配置
@@ -21,10 +21,11 @@ spring:
     time-zone: UTC
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1/baselibrary?useUnicode=true&characterEncoding=utf8
-#    url: jdbc:mysql://localhost:8001/baselibrary?useUnicode=true&characterEncoding=utf8
+#    url: jdbc:mysql://127.0.0.1/baselibrary?useUnicode=true&characterEncoding=utf8
+#    url: jdbc:mysql://94.191.48.23:8001/baselibrary?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://94.191.48.23:8001/baselibrary?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
     username: root
-    password: root
+    password: tmzdba
     driver-class-name: com.mysql.jdbc.Driver
     filters: stat,wall,log4j     #druid监控配置
   jpa:
