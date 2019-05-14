@@ -3,9 +3,10 @@ spring:
 server:
   tomcat:
     uri-encoding: utf-8
+    max-threads: 1000
   ssl:
     key-store: classpath:sslhttps.jks
     key-store-password: 152821b95f451
     key-alias: www.gttview.club
-    key-store-type: JKS
+    key-store-type: sun.security.provider.JavaKeyStore.JKS
     enabled: true
