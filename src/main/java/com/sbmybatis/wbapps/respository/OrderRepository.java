@@ -36,4 +36,5 @@ public interface OrderRepository extends JpaRepository<Orders,Integer> {
     List<Object[]> getBookListRistByParam(String wechatUserId);
     Orders getOrdersByWechatUserIdAndIsbn(String wechartUserId,String isbn);
     List<Orders> getAllByWechatUserIdAndActualReturnTimeIsNotNullAndFineIsNull(String wechartUserId);
+    Integer countDistinctByWechatUserId(String wechatUserId);
 }

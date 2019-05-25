@@ -62,11 +62,11 @@ public class BorrowBksController {
         }
         return commonResult;
     }
-    /*@RequestMapping("/getNotList")
-    public CommonResult getNotReturnBookList(@RequestParam Map<String,Object> map){
+    @RequestMapping("/getCountNumBookRead")
+    public CommonResult getCountNumBookRead(@RequestParam Map<String,Object> map){
         CommonResult commonResult=new CommonResult();
-        List<Orders> notReturnBookList = orderService.getNotReturnBookList((String) map.get("wxId"));
-        commonResult.setData(notReturnBookList);
+        Integer counts = orderService.getCountNumBookRead((String) map.get("wxId"));
+        commonResult.setData(counts);
         return commonResult;
-    }*/
+    }
 }

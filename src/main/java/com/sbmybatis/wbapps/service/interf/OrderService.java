@@ -59,4 +59,5 @@ public interface OrderService {
     default List<Orders> getNotReturnBookList(String wechatUserId){
         return null;
     }
+    Integer getCountNumBookRead(String wechatUserId);
 }

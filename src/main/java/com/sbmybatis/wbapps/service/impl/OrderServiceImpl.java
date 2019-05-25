@@ -72,4 +72,9 @@ public class OrderServiceImpl implements OrderService {
 
         return orderRepository.getAllByWechatUserIdAndActualReturnTimeIsNotNullAndFineIsNull(wechatUserId);
     }
+
+    @Override
+    public Integer getCountNumBookRead(String wechatUserId) {
+        return orderRepository.countDistinctByWechatUserId(wechatUserId);
+    }
 }

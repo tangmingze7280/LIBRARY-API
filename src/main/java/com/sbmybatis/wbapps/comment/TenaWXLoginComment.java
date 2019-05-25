@@ -13,6 +13,7 @@ public class TenaWXLoginComment {
     /**
      * 向指定URL发送GET方法的请求
      *
+     *
      * @param url
      *            发送请求的URL
      * @param param
