@@ -18,7 +18,7 @@ import java.util.List;
 public interface ReviewsRepository extends JpaRepository<Reviews,Integer> , JpaSpecificationExecutor<Reviews> {
     @Query(value="SELECT w.wx_code,w.avatar_url,r.content,r.score,w.nick_name,r.created_at,b.title ,r.id FROM books b, reviews r join wx_user w on w.wx_code=r.wechat_user_id  where r.wechat_user_id=?1 and b.isbn=r.book_id ",nativeQuery = true)
     List<Object[]> getAllByWechatUserIdByMyself(String wxId);
-    @Query(value=" SELECT w.wx_code,w.avatar_url,r.content,r.score,w.nick_name,r.created_at,b.title,r.id FROM wx_user w, reviews r join books b  on b.isbn=r.book_id   where r.book_id=?1  ",nativeQuery = true)
+    @Query(value=" SELECT w.wx_code,w.avatar_url,r.content,r.score,w.nick_name,r.created_at,b.title,r.id FROM wx_user w inner join  reviews r on  w.wx_code=r.wechat_user_id inner join books b  on b.isbn=r.book_id   where r.book_id=?1  ",nativeQuery = true)
     List<Object[]> getAllByBookIdByMyself(String bookId);
     @Modifying
     void deleteByWechatUserIdAndId(String bookId,Integer id);
