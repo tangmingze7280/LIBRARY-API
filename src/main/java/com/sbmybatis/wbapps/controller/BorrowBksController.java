@@ -46,10 +46,14 @@ public class BorrowBksController {
         calendar.add(Calendar.DATE, 13);
         orders.setActualReturnTime(sdf.format(calendar.getTime()));//应还时间
         orders.setActualTakeTime("0");//逾期天数
-        if(orderService.addOrderByParams(orders))
+        if(orderService.addOrderByParams(orders)) {
             commonResult.setMsg("借阅成功，13天");
-        else
+            commonResult.setState(500);
+        }
+        else {
             commonResult.setMsg("不允许重复借阅");
+            commonResult.setState(500);
+        }
         return commonResult;
     }
     @RequestMapping("/giveback")

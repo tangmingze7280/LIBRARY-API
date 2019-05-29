@@ -18,7 +18,7 @@ public interface BooksRepository extends JpaRepository<Books,Long>, JpaSpecifica
 
     List<Books> findAllByClassNumLike(String classNum, Pageable pageable);
     @Query(value = "select *,max(t.id) from books t where instr(t.title,?) group by t.id", nativeQuery = true)
-    Books findBooksByTitleLikeAndIdMAX(String title);
+    List<Books> findBooksByTitleLikeAndIdMAX(String title);
 
     @Query(value = "select t.title from books t where instr(t.title,?)>0  limit 0, 5 ", nativeQuery = true)
     List<String> findBooksNamesByTitleLike(String title);

@@ -25,7 +25,7 @@ public class BookListServiceImpl implements BookListService {
     }
 
     @Override
-    public Books getBookListByTitle(String bookName) {
+    public List<Books> getBookListByTitle(String bookName) {
         return booksRepository.findBooksByTitleLikeAndIdMAX(bookName);
     }
     @Override

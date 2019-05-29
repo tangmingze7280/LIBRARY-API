@@ -26,7 +26,7 @@ public class BookListController {
     public Books getBookInfoByBookName(@RequestParam String bookName){
 
 //        LOGGER.info(bookName);
-        Books msg=bookListService.getBookListByTitle(bookName);
+        Books msg=bookListService.getBookListByTitle(bookName).get(0);
 //        LOGGER.info(msg.toString());
         return msg;
     }

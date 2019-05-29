@@ -8,7 +8,7 @@ public interface BookListService {
     default  List<Books> getBookListByClassif(String classif,int pageSize,int pageNum){
         return null;
     }
-    default Books getBookListByTitle(String bookName){
+    default List<Books> getBookListByTitle(String bookName){
         return null;
     }
     default List<String> getBooksNamesByTitleLike(String simpleTitle){
